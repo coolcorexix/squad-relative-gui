@@ -1,5 +1,5 @@
-import { ChainId } from 'mock-pancakeswap-sdk';
-import { BASE_BSC_SCAN_URLS } from 'configs/BASE_BSC_SCAN_URLS';
+import { ChainId } from '@pancakeswap/sdk';
+import { BASE_BSC_SCAN_URLS } from 'config/BASE_BSC_SCAN_URLS';
 import { rpcNodes } from './rpcNodes';
 
 export async function setupNetwork() {
@@ -8,7 +8,7 @@ export async function setupNetwork() {
 	if (!ethereumProvider || !ethereumProvider.request) {
 		return;
 	}
-	const chainId = parseInt(process.env.REACT_APP_CHAIN_ID as string, 10);
+	const chainId = parseInt(process.env.NEXT_PUBLIC_CHAIN_ID as string, 10);
 	try {
 		await ethereumProvider.request({
 			method: 'wallet_addEthereumChain',

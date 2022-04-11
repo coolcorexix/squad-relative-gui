@@ -13,4 +13,7 @@ type ReactNode = ReactChild | ReactFragment | ReactPortal | boolean | null | und
 - Make UI with code from pancakeswap-frontend and old daga-marketplace, it sucks to switch design :tired:
 ```
 - Pancake has two themes set up but they are in sync from next-theme and styled-components, don't know why
+- They still use views as layout composing, pages folder serve merely for page routing
+- I found it very hard to concentrate and to make derivative contribution (such as reporting error to repo, make tweet from some new tricks and tips) while doing the main task. I might make sense to have a MD workspace to all these for me :cry
 ```
+

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { usePopper } from "react-popper";
 import styled from "styled-components";
 import { Box, Flex } from "../../../../components/Box";
-import { ChevronDownIcon } from "../../../../components/Svg";
+import { ChevronDownIcon } from "ui-kit/components/Svg";
 import { UserMenuProps, variants } from "./types";
 import MenuIcon from "./MenuIcon";
 import { UserMenuItem } from "./styles";

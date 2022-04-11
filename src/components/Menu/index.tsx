@@ -5,13 +5,14 @@ import { Menu as UikitMenu } from "ui-kit";
 import useTheme from "hooks/useTheme";
 import UserMenu from "./UserMenu";
 import { useMenuItems } from "./hooks/useMenuItems";
-import GlobalSettings from "./GlobalSettings";
 import { getActiveMenuItem, getActiveSubMenuItem } from "./utils";
 import { footerLinks } from "./config/footerConfig";
+import { useTranslation } from "contexts/Localization";
 
 const Menu = (props: any) => {
   const { isDark, setTheme } = useTheme();
   const { pathname } = useRouter();
+const { t } = useTranslation();
 
   const menuItems = useMenuItems();
 
@@ -37,7 +38,6 @@ const Menu = (props: any) => {
         );
       }}
       userMenu={<UserMenu />}
-      globalMenu={<GlobalSettings />}
       isDark={isDark}
       toggleTheme={toggleTheme}
       links={menuItems}

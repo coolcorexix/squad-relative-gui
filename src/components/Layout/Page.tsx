@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet-async';
-import { DEFAULT_META } from 'configs/constants/meta';
+import { DEFAULT_META } from 'config/constants/meta';
 import Container from './Container';
 
 const StyledPage = styled(Container)`

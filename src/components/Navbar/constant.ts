@@ -1,5 +1,5 @@
 import { SubMenuItem } from './types';
-import { AppUrl } from 'configs/constants/common';
+import { AppUrl } from 'config/constants/common';
 
 export const SubMenuItems: Array<SubMenuItem> = [
 	{
