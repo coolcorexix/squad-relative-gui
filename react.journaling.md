@@ -10,3 +10,7 @@
 type ReactNode = ReactChild | ReactFragment | ReactPortal | boolean | null | undefined;
 ```
 
+- Make UI with code from pancakeswap-frontend and old daga-marketplace, it sucks to switch design :tired:
+```
+- Pancake has two themes set up but they are in sync from next-theme and styled-components, don't know why
+```

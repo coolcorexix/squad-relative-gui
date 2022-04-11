@@ -12,6 +12,7 @@ import { SubMenuItems } from './constant';
 import { fadeIn, fadeOut } from './styles';
 import ScrollDetector, { ScrollDetectorEvent } from 'utils/scrollDetector';
 import { PaddingX } from 'styles/constants';
+import { WalletConnectButton } from 'components/WalletConnectButton';
 
 export const NavbarHeight = 96;
 
@@ -157,9 +158,7 @@ function Navbar() {
 						</LogoContainer>
 						<MenuDesktopContainer>
 							<SubMenu items={SubMenuItems} />
-							<Button minWidth={'256px'}>
-								Connect wallet
-							</Button>
+							<WalletConnectButton />
 						</MenuDesktopContainer>
 						<MenuMobileContainer>
 							<CollapseButton open={visible} onClick={toggleDropDown} />

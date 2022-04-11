@@ -1,9 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
-import { DagaTheme } from 'components/theme';
+import { PancakeTheme } from 'ui-kit/theme';
 // eslint-disable-next-line import/no-unresolved
 
 declare module 'styled-components' {
-	export interface DefaultTheme extends DagaTheme {}
+	export interface DefaultTheme extends PancakeTheme {}
 }
 
 const GlobalStyle = createGlobalStyle`
