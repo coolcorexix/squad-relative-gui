@@ -133,6 +133,7 @@ const Menu: React.FC<NavProps> = ({
               <Logo isDark={isDark} href={homeLink?.href ?? "/"} />
               {!isMobile && <MenuItems items={links} activeItem={activeItem} activeSubItem={activeSubItem} ml="24px" />}
             </Flex>
+            {globalMenu} {userMenu}
           </StyledNav>
         </FixedContainer>
         {subLinks && (

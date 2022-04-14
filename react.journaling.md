@@ -17,3 +17,4 @@ type ReactNode = ReactChild | ReactFragment | ReactPortal | boolean | null | und
 - I found it very hard to concentrate and to make derivative contribution (such as reporting error to repo, make tweet from some new tricks and tips) while doing the main task. I might make sense to have a MD workspace to all these for me :cry
 ```
 
+- Please try to fix `localStorage?.setItem(serializedKey, stringify) -> ReferenceError: localStorage is not defined` tmr

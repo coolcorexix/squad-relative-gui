@@ -13,7 +13,7 @@ import {
 } from "@pancakeswap/uikit";
 import { useAuth } from "hooks/useAuth";
 // TODO
-// import { useProfile } from "state/profile/hooks";
+import { useProfile } from "state/profile/hooks";
 import { WalletConnectButton } from "components/WalletConnectButton";
 import { useGetBnbBalance } from "hooks/useTokenBalance";
 import { useTranslation } from "contexts/Localization";
@@ -29,7 +29,7 @@ const UserMenu = () => {
   const { logout } = useAuth();
   const { balance, fetchStatus } = useGetBnbBalance();
   // TODO
-  // const { isInitialized, isLoading, profile } = useProfile();
+  const { isInitialized, isLoading, profile } = useProfile();
   const [onPresentWalletModal] = useModal(
     <WalletModal initialView={WalletView.WALLET_INFO} />
   );
@@ -58,6 +58,7 @@ const UserMenu = () => {
   };
 
   const UserMenuItems = () => {
+    console.log("UserMenuItems");
     return (
       <>
         <WalletUserMenuItem
@@ -75,11 +76,11 @@ const UserMenu = () => {
         >
           {t("Your NFTs")}
         </UserMenuItem> */}
-        {/* <ProfileUserMenuItem
+        <ProfileUserMenuItem
           isLoading={isLoading}
           hasProfile={hasProfile}
           disabled={isWrongNetwork}
-        /> */}
+        />
         <UserMenuDivider />
         <UserMenuItem as="button" onClick={logout}>
           <Flex alignItems="center" justifyContent="space-between" width="100%">
@@ -111,6 +112,7 @@ const UserMenu = () => {
       </UIKitUserMenu>
     );
   }
+  console.log("should be here");
   return <WalletConnectButton />;
   // return (
   //   <ConnectWalletButton scale="sm">
