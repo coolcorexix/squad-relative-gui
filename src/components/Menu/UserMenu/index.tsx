@@ -12,19 +12,20 @@ import {
   Box,
 } from "@pancakeswap/uikit";
 import { useAuth } from "hooks/useAuth";
-// TODO
 import { useProfile } from "state/profile/hooks";
 import { WalletConnectButton } from "components/WalletConnectButton";
 import { useGetBnbBalance } from "hooks/useTokenBalance";
 import { useTranslation } from "contexts/Localization";
-// import { nftsBaseUrl } from "views/Nft/market/constants";
+import { nftsBaseUrl } from "views/Nft/market/constants";
 import { FetchStatus } from "config/constants/types";
 import WalletModal, { WalletView, LOW_BNB_BALANCE } from "./WalletModal";
 import ProfileUserMenuItem from "./ProfileUserMenutItem";
 import WalletUserMenuItem from "./WalletUserMenuItem";
+import { useRouter } from "next/router";
 
 const UserMenu = () => {
   const { t } = useTranslation();
+  const router = useRouter();
   const { account, error } = useWeb3React();
   const { logout } = useAuth();
   const { balance, fetchStatus } = useGetBnbBalance();
@@ -58,7 +59,6 @@ const UserMenu = () => {
   };
 
   const UserMenuItems = () => {
-    console.log("UserMenuItems");
     return (
       <>
         <WalletUserMenuItem
@@ -67,15 +67,15 @@ const UserMenu = () => {
           onPresentWalletModal={onClickWalletMenu}
         />
         <UserMenuDivider />
-        {/* <UserMenuItem
+        <UserMenuItem
           as="button"
           disabled={isWrongNetwork}
           onClick={() =>
-            router.push(`${nftsBaseUrl}/profile/${account.toLowerCase()}`)
+            router.push(`/claim`)
           }
         >
           {t("Your NFTs")}
-        </UserMenuItem> */}
+        </UserMenuItem>
         <ProfileUserMenuItem
           isLoading={isLoading}
           hasProfile={hasProfile}
@@ -112,7 +112,6 @@ const UserMenu = () => {
       </UIKitUserMenu>
     );
   }
-  console.log("should be here");
   return <WalletConnectButton />;
   // return (
   //   <ConnectWalletButton scale="sm">

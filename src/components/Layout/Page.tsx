@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Helmet } from 'react-helmet-async';
 import { DEFAULT_META } from 'config/constants/meta';
 import Container from './Container';
+import Head from 'next/head';
 
 const StyledPage = styled(Container)`
 	// padding-top: 16px;
@@ -24,12 +24,12 @@ const PageMeta = () => {
 	const pageTitle = title;
 
 	return (
-		<Helmet>
+		<Head>
 			<title>{pageTitle}</title>
 			<meta property="og:title" content={title} />
 			<meta property="og:description" content={description} />
 			<meta property="og:image" content={image} />
-		</Helmet>
+		</Head>
 	);
 };
 

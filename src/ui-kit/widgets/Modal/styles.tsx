@@ -4,7 +4,6 @@ export const ModalContainer = styled.div<{ minWidth: string | number }>`
 	overflow: hidden;
 	background: ${({ theme }) => {
 		//theme.modal.background;
-		console.log(`KDebugger -> styles -> theme`, theme);
 		return '#f00';
 	}};
 	box-shadow: 0 20px 36px -8px rgba(14, 14, 44, 0.1),

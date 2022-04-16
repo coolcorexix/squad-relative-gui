@@ -17,4 +17,16 @@ type ReactNode = ReactChild | ReactFragment | ReactPortal | boolean | null | und
 - I found it very hard to concentrate and to make derivative contribution (such as reporting error to repo, make tweet from some new tricks and tips) while doing the main task. I might make sense to have a MD workspace to all these for me :cry
 ```
 
-- Please try to fix `localStorage?.setItem(serializedKey, stringify) -> ReferenceError: localStorage is not defined` tmr
+- Please try to fix `localStorage?.setItem(serializedKey, stringify) -> ReferenceError: localStorage is not defined`
+```
+localStorage as a part of window var is not available on server side, it only available for the first time in useEffect hook (didMount event for e.g.) only by then dev can access localStorage. this somehow make the code not highly reusable because after didMount run, render function can access this localStorage as well. Reuse a part of the code might lead to error where render is called on server before the (didMount is triggered). 
+Best way to do this is to add a layer of defense
+if (typeof window !== undefined) { // Run logic that need to access Local storage}
+```
+
+- Make NFT inventory available today
+```
+- Should I copy the code or should I just take what I need? -> maybe the latter
+```
+
+- redux-persist really help pancakeswap dodge a big bullet while not caring about whether the render is at ser or cli. Almost all logic run when the persist gate done loaded so it all happening in client side

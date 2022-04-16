@@ -11,8 +11,9 @@ import { useTranslation } from "contexts/Localization";
 
 const Menu = (props: any) => {
   const { isDark, setTheme } = useTheme();
+  console.log("🚀 ~ file: index.tsx ~ line 14 ~ Menu ~ isDark", isDark);
   const { pathname } = useRouter();
-const { t } = useTranslation();
+  const { t } = useTranslation();
 
   const menuItems = useMenuItems();
 
