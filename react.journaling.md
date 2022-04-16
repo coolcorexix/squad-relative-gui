@@ -30,3 +30,8 @@ if (typeof window !== undefined) { // Run logic that need to access Local storag
 ```
 
 - redux-persist really help pancakeswap dodge a big bullet while not caring about whether the render is at ser or cli. Almost all logic run when the persist gate done loaded so it all happening in client side
+```
+Using a simple tip from this noble man do the job: https://flaviocopes.com/nextjs-server-client-code/
+```
+
+- _documents come with styled-component guide is needed to power css-in-js in the server side. Ref: https://styled-components.com/docs/advanced#nextjs
