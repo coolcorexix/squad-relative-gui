@@ -1,8 +1,9 @@
-import React from 'react';
-import { Box, BoxProps } from '@pancakeswap/uikit';
+import { Box, BoxProps } from "ui-kit";
 
 const Container: React.FC<BoxProps> = ({ children, ...props }) => (
-	<Box {...props}>{children}</Box>
+  <Box px={["16px", "24px"]} mx="auto" maxWidth="1200px" {...props}>
+    {children}
+  </Box>
 );
 
 export default Container;
