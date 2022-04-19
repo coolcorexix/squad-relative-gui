@@ -10,6 +10,7 @@ import {
   NftToken,
   TokenIdWithCollectionAddress,
 } from "./types";
+import { getPancakeSquadAddress } from "utils/addressHelpers";
 
 /**
  * Fetch a single NFT using the API
@@ -80,7 +81,11 @@ export const getCompleteAccountNftData = async (
 ): Promise<NftToken[]> => {
   const walletNftIdsWithCollectionAddress =
     await fetchWalletTokenIdsForCollections(account, collections);
-  if (profileNftWithCollectionAddress?.tokenId) {
+  if (
+    profileNftWithCollectionAddress?.tokenId &&
+    profileNftWithCollectionAddress.collectionAddress ===
+      getPancakeSquadAddress()
+  ) {
     walletNftIdsWithCollectionAddress.unshift(profileNftWithCollectionAddress);
   }
 

@@ -34,7 +34,7 @@ export const useNftsForAddress = (
     !isProfileFetching && !isEmpty(collections) && isAddress(account)
       ? [account, "userNfts"]
       : null,
-    async () => getCompleteAccountNftData(account, collections),
+    async () => getCompleteAccountNftData(account, collections, profileNftWithCollectionAddress),
     { use: [laggyMiddleware] }
   );
   console.log("🚀 ~ file: useNftsForAddress.tsx ~ line 34 ~ status", status);

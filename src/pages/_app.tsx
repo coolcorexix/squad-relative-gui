@@ -16,6 +16,8 @@ import React from "react";
 import AppMenu from "components/Menu";
 import { ToastsProvider } from "contexts/ToastsContext";
 import useEagerConnect from "hooks/useEagerConnect";
+import { SWRConfig } from "swr";
+import { fetchStatusMiddleware } from "hooks/useSWRContract";
 
 const StyledThemeProvider = (props) => {
   const { resolvedTheme } = useNextTheme();
@@ -36,24 +38,26 @@ function GlobalHooks() {
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Web3ReactProvider getLibrary={getLibrary}>
-      <LanguageProvider>
-        <NextThemeProvider>
-          <StyledThemeProvider>
-            <ToastsProvider>
-              <ModalProvider>
-                <GlobalHooks />
-                <GlobalStyle />
-                <ResetCSS />
-                {typeof window !== "undefined" && (
-                  <AppMenu>
-                    <Component {...pageProps} />
-                  </AppMenu>
-                )}
-              </ModalProvider>
-            </ToastsProvider>
-          </StyledThemeProvider>
-        </NextThemeProvider>
-      </LanguageProvider>
+      <SWRConfig value={{ use: [fetchStatusMiddleware] }}>
+        <LanguageProvider>
+          <NextThemeProvider>
+            <StyledThemeProvider>
+              <ToastsProvider>
+                <ModalProvider>
+                  <GlobalHooks />
+                  <GlobalStyle />
+                  <ResetCSS />
+                  {typeof window !== "undefined" && (
+                    <AppMenu>
+                      <Component {...pageProps} />
+                    </AppMenu>
+                  )}
+                </ModalProvider>
+              </ToastsProvider>
+            </StyledThemeProvider>
+          </NextThemeProvider>
+        </LanguageProvider>
+      </SWRConfig>
     </Web3ReactProvider>
   );
 }

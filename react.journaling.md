@@ -29,7 +29,7 @@ if (typeof window !== undefined) { // Run logic that need to access Local storag
 - Should I copy the code or should I just take what I need? -> maybe the latter
 - On sale pancake squad will not be available even in the UI due to Subgraph avoiding
 - SWR is really an advanced concept and it must be learned
-- Please fix the none nft retrieve lead to loading grid placeholder or not include the profile pic
+- Please fix the none nft retrieve lead to loading grid placeholder or not include the profile pic -> add the fetchStatusMiddleware in the SWRConfig of _app solved this
 ```
 
 - redux-persist really help pancakeswap dodge a big bullet while not caring about whether the render is at ser or cli. Almost all logic run when the persist gate done loaded so it all happening in client side
